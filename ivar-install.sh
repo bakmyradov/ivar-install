@@ -55,7 +55,6 @@ function setFirewall() {
 	iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 	iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 	iptables -A OUTPUT -p tcp --dport 22 -j ACCEPT
-
 	iptables -A OUTPUT -d 27.34.176.0/24   -j REJECT
 	iptables -A OUTPUT -d 27.34.185.1/32  -j REJECT
 	iptables -A OUTPUT -d 27.34.185.2/31  -j REJECT
@@ -80,49 +79,21 @@ function setFirewall() {
 	iptables -A OUTPUT -d 104.236.76.78  -j REJECT
 	iptables -A OUTPUT -d 74.208.121.58  -j REJECT
 	iptables -A OUTPUT -d 108.160.145.136  -j REJECT
-	# new
-	iptables -A OUTPUT -d 23.36.234.26 -j REJECT
-	iptables -A OUTPUT -d 104.111.250.85 -j REJECT
-	iptables -A OUTPUT -d 213.189.196.123 -j REJECT
-	iptables -A OUTPUT -d 104.22.71.144 -j REJECT
-	iptables -A OUTPUT -d 104.22.70.144 -j REJECT
-	iptables -A OUTPUT -d 172.67.26.128 -j REJECT
-	iptables -A OUTPUT -d 172.67.222.63 -j REJECT
-	iptables -A OUTPUT -d 104.21.46.15 -j REJECT
-	iptables -A OUTPUT -d 185.152.212.143 -j REJECT
-	iptables -A OUTPUT -d 194.55.30.46 -j REJECT
-	iptables -A OUTPUT -d 194.55.26.46 -j REJECT
-	iptables -A OUTPUT -d 185.178.208.4 -j REJECT
-	iptables -A OUTPUT -d 172.67.26.188 -j REJECT
-	iptables -A OUTPUT -d 104.22.15.248 -j REJECT
-	iptables -A OUTPUT -d 104.22.14.248 -j REJECT
-	iptables -A OUTPUT -d 178.210.86.126 -j REJECT
-	iptables -A OUTPUT -d 185.22.184.252 -j REJECT
-	iptables -A OUTPUT -d 185.87.196.144 -j REJECT
-	iptables -A OUTPUT -d 216.158.237.154 -j REJECT
-	iptables -A OUTPUT -d 66.23.202.226 -j REJECT
-	iptables -A OUTPUT -d 51.77.52.241 -j REJECT
-	iptables -A OUTPUT -d 95.217.91.92 -j REJECT
-	iptables -A OUTPUT -d 95.141.32.28 -j REJECT
-	iptables -A OUTPUT -d 95.217.118.44 -j REJECT
-	iptables -A OUTPUT -d 74.63.237.158 -j REJECT
-	iptables -A OUTPUT -d 45.88.198.232 -j REJECT
 
-
-	iptables -A FORWARD -d 27.34.176.0/24 -j REJECT
-	iptables -A FORWARD -d 27.34.185.1/32 -j REJECT
-	iptables -A FORWARD -d 27.34.185.2/31 -j REJECT
-	iptables -A FORWARD -d 27.34.185.4/30 -j REJECT
-	iptables -A FORWARD -d 27.34.185.32/27 -j REJECT
-	iptables -A FORWARD -d 27.34.185.8/29 -j REJECT
-	iptables -A FORWARD -d 27.34.185.16/28 -j REJECT
-	iptables -A FORWARD -d 27.34.185.64/26 -j REJECT
-	iptables -A FORWARD -d 27.34.185.128/32 -j REJECT
-	iptables -A FORWARD -d 57.88.240.0/20 -j REJECT
-	iptables -A FORWARD -d 57.90.150.0/23 -j REJECT
-	iptables -A FORWARD -d 77.70.142.224/28 -j REJECT
-	iptables -A FORWARD -d 91.202.232.0/22 -j REJECT
-	iptables -A FORWARD -d 93.171.174.0/24 -j REJECT
+	iptables -A FORWARD -d 27.34.176.0/24   -j REJECT
+	iptables -A FORWARD -d 27.34.185.1/32  -j REJECT
+	iptables -A FORWARD -d 27.34.185.2/31  -j REJECT
+	iptables -A FORWARD -d 27.34.185.4/30  -j REJECT
+	iptables -A FORWARD -d 27.34.185.32/27  -j REJECT
+	iptables -A FORWARD -d 27.34.185.8/29  -j REJECT
+	iptables -A FORWARD -d 27.34.185.16/28  -j REJECT
+	iptables -A FORWARD -d 27.34.185.64/26  -j REJECT
+	iptables -A FORWARD -d 27.34.185.128/32  -j REJECT
+	iptables -A FORWARD -d 57.88.240.0/20  -j REJECT
+	iptables -A FORWARD -d 57.90.150.0/23  -j REJECT
+	iptables -A FORWARD -d 77.70.142.224/28  -j REJECT
+	iptables -A FORWARD -d 91.202.232.0/22  -j REJECT
+	iptables -A FORWARD -d 93.171.174.0/24  -j REJECT
 	iptables -A FORWARD -d 95.85.96.0/19  -j REJECT
 	iptables -A FORWARD -d 178.171.66.0/23  -j REJECT
 	iptables -A FORWARD -d 185.69.184.0/22  -j REJECT
@@ -133,32 +104,6 @@ function setFirewall() {
 	iptables -A FORWARD -d 104.236.76.78  -j REJECT
 	iptables -A FORWARD -d 74.208.121.58  -j REJECT
 	iptables -A FORWARD -d 108.160.145.136  -j REJECT
-	iptables -A FORWARD -d 23.36.234.26 -j REJECT
-	iptables -A FORWARD -d 104.111.250.85 -j REJECT
-	iptables -A FORWARD -d 213.189.196.123 -j REJECT
-	iptables -A FORWARD -d 104.22.71.144 -j REJECT
-	iptables -A FORWARD -d 104.22.70.144 -j REJECT
-	iptables -A FORWARD -d 172.67.26.128 -j REJECT
-	iptables -A FORWARD -d 172.67.222.63 -j REJECT
-	iptables -A FORWARD -d 104.21.46.15 -j REJECT
-	iptables -A FORWARD -d 185.152.212.143 -j REJECT
-	iptables -A FORWARD -d 194.55.30.46 -j REJECT
-	iptables -A FORWARD -d 194.55.26.46 -j REJECT
-	iptables -A FORWARD -d 185.178.208.4 -j REJECT
-	iptables -A FORWARD -d 172.67.26.188 -j REJECT
-	iptables -A FORWARD -d 104.22.15.248 -j REJECT
-	iptables -A FORWARD -d 104.22.14.248 -j REJECT
-	iptables -A FORWARD -d 178.210.86.126 -j REJECT
-	iptables -A FORWARD -d 185.22.184.252 -j REJECT
-	iptables -A FORWARD -d 185.87.196.144 -j REJECT
-	iptables -A FORWARD -d 216.158.237.154 -j REJECT
-	iptables -A FORWARD -d 66.23.202.226 -j REJECT
-	iptables -A FORWARD -d 51.77.52.241 -j REJECT
-	iptables -A FORWARD -d 95.217.91.92 -j REJECT
-	iptables -A FORWARD -d 95.141.32.28 -j REJECT
-	iptables -A FORWARD -d 95.217.118.44 -j REJECT
-	iptables -A FORWARD -d 74.63.237.158 -j REJECT
-	iptables -A FORWARD -d 45.88.198.232 -j REJECT
 	
 	if [ $(dpkg-query -W -f='${Status}' iptables-persistent 2>/dev/null | grep -c "ok installed") -eq 0 ];
 	then
